@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión Académica</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section class="pantalla activa" id="login">
+    <div class="contenedor">
+      <img src="img/img.jpg" alt="Logo" class="logo">
+      <h1>Iniciar Sesión</h1>
+      <input type="text" placeholder="Usuario" id="usuario">
+      <input type="password" placeholder="Contraseña" id="password">
+      <button class="btn" onclick="irA('menuAdmin')">Ingresar</button>
+    </div>
+  </section>
+
+  <!-- MENÚ ADMIN -->
+  <section class="pantalla" id="menuAdmin">
+    <div class="contenedor">
+      <h2>Menú Administrador</h2>
+      <button class="btn" onclick="irA('agregarEstudiante')">Añadir estudiante</button>
+      <button class="btn" onclick="irA('eliminarEstudiante')">Eliminar estudiante</button>
+      <button class="btn" onclick="irA('agregarProfesor')">Añadir profesor</button>
+      <button class="btn" onclick="irA('eliminarProfesor')">Eliminar profesor</button>
+      <button class="btn" onclick="irA('reportesEstudiantes')">Ver reportes de estudiantes</button>
+      <button class="btn" onclick="irA('descargarReportes')">Descargar reportes</button>
+      <button class="btn secundario" onclick="irA('login')">Cerrar sesión</button>
+    </div>
+  </section>
+
+  <!-- AÑADIR ESTUDIANTE -->
+  <section class="pantalla" id="agregarEstudiante">
+    <div class="contenedor">
+      <h2>Añadir estudiante</h2>
+      <input type="text" placeholder="Código de estudiante">
+      <input type="text" placeholder="Nombre de estudiante">
+      <button class="btn" onclick="irA('accionExitosa')">Añadir</button>
+      <button class="btn secundario" onclick="irA('menuAdmin')">Volver</button>
+    </div>
+  </section>
+
+  <!-- AÑADIR PROFESOR -->
+  <section class="pantalla" id="agregarProfesor">
+    <div class="contenedor">
+      <h2>Añadir profesor</h2>
+      <input type="text" placeholder="C.C profesor">
+      <input type="text" placeholder="Nombre de profesor">
+      <button class="btn" onclick="irA('accionExitosa')">Añadir</button>
+      <button class="btn secundario" onclick="irA('menuAdmin')">Volver</button>
+    </div>
+  </section>
+
+  <!-- ELIMINAR ESTUDIANTE -->
+  <section class="pantalla" id="eliminarEstudiante">
+    <div class="contenedor">
+      <h2>Eliminar estudiante</h2>
+      <input type="text" placeholder="Código estudiante">
+      <button class="btn" onclick="irA('confirmarEliminarEstudiante')">Buscar</button>
+      <button class="btn secundario" onclick="irA('menuAdmin')">Volver</button>
+    </div>
+  </section>
+
+  <!-- CONFIRMAR ELIMINAR ESTUDIANTE -->
+  <section class="pantalla" id="confirmarEliminarEstudiante">
+    <div class="contenedor">
+      <h2>¿Eliminar reporte de estudiante?</h2>
+      <p>Estás a punto de eliminar el reporte de <strong>Juan Cárdenas</strong>.</p>
+      <button class="btn" onclick="irA('accionExitosa')">Sí</button>
+      <button class="btn secundario" onclick="irA('menuAdmin')">No</button>
+    </div>
+  </section>
+
+  <!-- ELIMINAR PROFESOR -->
+  <section class="pantalla" id="eliminarProfesor">
+    <div class="contenedor">
+      <h2>Eliminar profesor</h2>
+      <input type="text" placeholder="C.C profesor">
+      <button class="btn" onclick="irA('accionExitosa')">Eliminar</button>
+      <button class="btn secundario" onclick="irA('menuAdmin')">Volver</button>
+    </div>
+  </section>
+
+  <!-- REPORTES DE ESTUDIANTES -->
+  <section class="pantalla" id="reportesEstudiantes">
+    <div class="contenedor">
+      <h2>Reporte de Juan Cárdenas</h2>
+      <p><strong>Materias en riesgo:</strong></p>
+      <ul>
+        <li>Ing. de software I</li>
+        <li>Base de datos</li>
+        <li>Telecomunicaciones</li>
+      </ul>
+      <button class="btn secundario" onclick="irA('menuAdmin')">Volver</button>
+    </div>
+  </section>
+
+  <!-- DESCARGAR REPORTES -->
+  <section class="pantalla" id="descargarReportes">
+    <div class="contenedor">
+      <h2>Descargar Reportes</h2>
+      <button class="btn">Consultar notas</button>
+      <button class="btn">Alertas de riesgo</button>
+      <button class="btn">Descargar reporte</button>
+      <button class="btn secundario" onclick="irA('menuAdmin')">Volver</button>
+    </div>
+  </section>
+
+  <!-- ACCIÓN EXITOSA -->
+  <section class="pantalla" id="accionExitosa">
+    <div class="contenedor">
+      <h2>✅ Acción exitosa</h2>
+      <button class="btn" onclick="irA('menuAdmin')">Volver al menú</button>
+    </div>
+  </section>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
